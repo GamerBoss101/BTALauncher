@@ -1,0 +1,60 @@
+{
+  "name": "bta-launcher",
+  "version": "2.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron . --disable-software-rasterizer",
+    "build": "electron-builder",
+    "pack": "electron-builder build",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac"
+  },
+  "author": "Sir Blob",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "electron": "^25.9.8",
+    "electron-builder": "^24.9.1",
+    "fs": "0.0.1-security"
+  },
+  "build": {
+    "appId": "tech.bosstop.btalauncher",
+    "forceCodeSigning": false,
+    "productName": "BTA Launcher",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "asar": "true"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "nsis": {
+      "license": "./src/assets/eula.txt",
+      "deleteAppDataOnUninstall": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "BTA Launcher",
+      "oneClick": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true
+    }
+  },
+  "dependencies": {
+    "ms": "^2.1.3"
+  }
+}
