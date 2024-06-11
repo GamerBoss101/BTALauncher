@@ -1,9 +1,11 @@
 <script>
-	import "$lib/css/style.css";
+	import "$lib/css/client.css";
+	import NavBar from "$lib/components/NavBar.svelte";
 </script>
 
 
 <main>
+	<NavBar />
 	<slot></slot>
 </main>
 

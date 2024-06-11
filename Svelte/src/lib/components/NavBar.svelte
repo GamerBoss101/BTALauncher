@@ -1,8 +1,6 @@
 <script>
     // @ts-nocheck
     import { onMount } from "svelte";
-    import { goto } from "$app/navigation";
-
     let version = "0.0.0";
     onMount(() => {
         version = window.game.getVersion();

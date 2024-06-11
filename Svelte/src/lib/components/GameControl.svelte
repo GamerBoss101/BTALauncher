@@ -15,7 +15,7 @@
         fetch("https://api.github.com/repos/Better-than-Adventure/bta-download-repo/releases")
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            console.log(data[0]);
             latestVersion = data[0].name;
         })
         .catch(error => {

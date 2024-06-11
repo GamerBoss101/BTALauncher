@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Player from "$lib/components/client/home/Player.svelte";
-    import GameControl from "$lib/components/client/home/GameControl.svelte";
+    import Player from "$lib/components/Player.svelte";
+    import GameControl from "$lib/components/GameControl.svelte";
 </script>
    
 
